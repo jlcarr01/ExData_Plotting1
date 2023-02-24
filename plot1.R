@@ -22,7 +22,12 @@ table <- mutate(table, DateTime = dmy_hms(paste(table$Date, table$Time)))
 ## Convert Date column to date  object
 table$Date <- dmy(table$Date)
 
+## PNG file, default = 480x480
+png(file = "plot1.png")
+
 hist(table$Global_active_power, col = "red", main = "Global Active Power",
      xlab = "Global Active Power (kilowatts)" )
+
+dev.off()
 
 
